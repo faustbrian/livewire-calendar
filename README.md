@@ -36,4 +36,87 @@ $ composer require preemstudio/livewire-calendar
 
 ## Usage
 
-Please review the contents of [our test suite](/tests) for detailed usage examples.
+> **Note**
+> Please review the contents of [our test suite](/tests) for detailed usage examples.
+
+In order to use this component, you must create a new Livewire component that extends the `AbstractCalendar` class. This class provides the basic functionality for the calendar, and you can override the methods to customize the calendar to your needs. The `events()` function is the only required method, and it must return a `Collection` of `Event` objects.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Livewire;
+
+use Illuminate\Support\Collection;
+use PreemStudio\LivewireCalendar\Data\Event;
+use PreemStudio\LivewireCalendar\Http\Livewire\AbstractCalendar;
+
+final class Calendar extends AbstractCalendar
+{
+    public function events(): Collection
+    {
+        return new Collection([
+            new Event(
+                id: 'unique-id',
+                name: 'Sales Meeting',
+                description: 'Review the sales for the month',
+                href: 'https://openai.com/',
+                startTime: Carbon::today()->addHours(8),
+                endTime: Carbon::today()->addHours(16),
+            ),
+            new Event(
+                id: 'another-unique-id',
+                name: 'Marketing Meeting',
+                description: 'Review the marketing for the month',
+                href: 'https://openai.com/',
+                startTime: Carbon::tomorrow()->addHours(8),
+                endTime: Carbon::tomorrow()->addHours(16),
+            ),
+        ]);
+    }
+}
+```
+
+If you want to load events from the database with Eloquent you will need to create a new `Event` object for each record. You can use the `map()` method to create a new `Collection` of `Event` objects.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Livewire;
+
+use Illuminate\Support\Collection;
+use PreemStudio\LivewireCalendar\Data\Event;
+use PreemStudio\LivewireCalendar\Http\Livewire\AbstractCalendar;
+
+final class Calendar extends AbstractCalendar
+{
+    public function events(): Collection
+    {
+        return Model::get()->map(
+            fn (Model $model): Event => new Event(
+                id: $model->id,
+                name: $model->name,
+                description: $model->description,
+                href: route('event', $model->id),
+                startTime: $model->starts_at,
+                endTime: $model->ends_at,
+            )
+        );
+    }
+}
+```
+
+The most basic way to render this Livewire component on a page is using the `<livewire:` tag syntax:
+
+```blade
+<livewire:calendar />
+```
+
+Alternatively you can use the `@livewire` blade directive:
+
+```php
+@livewire('calendar')
+```
