@@ -6,41 +6,6 @@ parameters:
 			path: src/Data/Month.php
 
 		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\:\\:friday\\(\\) should return PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day but returns PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day\\|null\\.$#"
-			count: 1
-			path: src/Data/Week.php
-
-		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\:\\:monday\\(\\) should return PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day but returns PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day\\|null\\.$#"
-			count: 1
-			path: src/Data/Week.php
-
-		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\:\\:saturday\\(\\) should return PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day but returns PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day\\|null\\.$#"
-			count: 1
-			path: src/Data/Week.php
-
-		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\:\\:sunday\\(\\) should return PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day but returns PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day\\|null\\.$#"
-			count: 1
-			path: src/Data/Week.php
-
-		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\:\\:thursday\\(\\) should return PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day but returns PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day\\|null\\.$#"
-			count: 1
-			path: src/Data/Week.php
-
-		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\:\\:tuesday\\(\\) should return PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day but returns PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day\\|null\\.$#"
-			count: 1
-			path: src/Data/Week.php
-
-		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\:\\:wednesday\\(\\) should return PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day but returns PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day\\|null\\.$#"
-			count: 1
-			path: src/Data/Week.php
-
-		-
 			message: "#^Cannot access property \\$href on mixed\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
@@ -62,11 +27,6 @@ parameters:
 
 		-
 			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:eventsForDay\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/Http/Livewire/AbstractCalendar.php
-
-		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getDayLabels\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
@@ -101,7 +61,12 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Method PreemStudio\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getTimeLabels\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Carbon\\\\CarbonInterface\\)\\: mixed\\)\\|null, Closure\\(Carbon\\\\Carbon\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\DayLabel given\\.$#"
+			count: 1
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Carbon\\\\CarbonInterface\\)\\: mixed\\)\\|null, Closure\\(Carbon\\\\Carbon\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\TimeLabel given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
@@ -112,16 +77,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: Illuminate\\\\Support\\\\Collection\\<int, PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\>, Closure\\(PreemStudio\\\\LivewireCalendar\\\\Data\\\\Month\\)\\: Illuminate\\\\Support\\\\Collection\\<int, PreemStudio\\\\LivewireCalendar\\\\Data\\\\Week\\> given\\.$#"
-			count: 1
-			path: src/Http/Livewire/AbstractCalendar.php
-
-		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\DayLabel, Closure\\(Carbon\\\\Carbon\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\DayLabel given\\.$#"
-			count: 1
-			path: src/Http/Livewire/AbstractCalendar.php
-
-		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\TimeLabel, Closure\\(Carbon\\\\Carbon\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\TimeLabel given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
@@ -147,10 +102,10 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$value of function collect expects Illuminate\\\\Contracts\\\\Support\\\\Arrayable\\<\\(int\\|string\\), Carbon\\\\CarbonInterface\\|null\\>\\|iterable\\<\\(int\\|string\\), Carbon\\\\CarbonInterface\\|null\\>\\|null, Carbon\\\\CarbonPeriod given\\.$#"
-			count: 3
+			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
 			message: "#^Unable to resolve the template type TKey in call to function collect$#"
-			count: 3
+			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php

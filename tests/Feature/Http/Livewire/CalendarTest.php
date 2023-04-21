@@ -39,7 +39,8 @@ it('renders the component', function (): void {
         ->assertViewHas('week')
         ->assertViewHas('day')
         ->assertViewHas('events')
-        ->assertViewHas('timesOfDay');
+        ->assertViewHas('dayLabels')
+        ->assertViewHas('timeLabels');
 });
 
 it('moves cursor to today', function (): void {
