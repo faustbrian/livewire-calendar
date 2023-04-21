@@ -26,7 +26,7 @@ trait ManagesLabels
     protected function getTimeLabels(): array
     {
         return \array_map(
-            fn (Carbon $date): TimeLabel => new TimeLabel($date),
+            fn (Carbon $date): TimeLabel => new TimeLabel($this->formatTimeLabel, $date),
             CarbonPeriod::create(
                 $this->selectedDateTime->clone()->startOfDay(),
                 '1 hour',

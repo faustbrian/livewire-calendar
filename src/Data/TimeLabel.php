@@ -9,6 +9,7 @@ use Carbon\Carbon;
 final readonly class TimeLabel
 {
     public function __construct(
+        private string $dateTimeFormat,
         private Carbon $dateTime,
     ) {
         //
@@ -21,6 +22,6 @@ final readonly class TimeLabel
 
     private function toTwelveHours(): string
     {
-        return $this->dateTime->format('g A');
+        return $this->dateTime->format($this->dateTimeFormat);
     }
 }

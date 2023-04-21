@@ -20,9 +20,9 @@ final readonly class Event
         //
     }
 
-    public function time(): string
+    public function time(string $dateTimeFormat): string
     {
-        return $this->startTime->format('g:i A');
+        return $this->startTime->format($dateTimeFormat);
     }
 
     public function dateTime(): string
@@ -30,14 +30,14 @@ final readonly class Event
         return $this->startTime->toIso8601ZuluString();
     }
 
-    public function startTimeHuman(): string
+    public function startTimeHuman(string $dateTimeFormat): string
     {
-        return $this->startTime->format('g:i A');
+        return $this->startTime->format($dateTimeFormat);
     }
 
-    public function endTimeHuman(): string
+    public function endTimeHuman(string $dateTimeFormat): string
     {
-        return $this->endTime->format('g:i A');
+        return $this->endTime->format($dateTimeFormat);
     }
 
     /**

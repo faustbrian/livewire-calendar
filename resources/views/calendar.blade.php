@@ -289,7 +289,7 @@
 
                                             <p class="text-blue-500 group-hover:text-blue-700">
                                                 <time datetime="{{ $event->dateTime() }}">
-                                                    {{ $event->startTimeHuman() }}
+                                                    {{ $event->startTimeHuman($formatEventTime) }}
                                                 </time>
                                             </p>
                                         </span>
@@ -471,7 +471,7 @@
 
                                                 <p class="text-blue-500 group-hover:text-blue-700">
                                                     <time datetime="{{ $event->dateTime() }}">
-                                                        {{ $event->startTimeHuman() }}
+                                                        {{ $event->startTimeHuman($formatEventTime) }}
                                                     </time>
                                                 </p>
                                             </span>
@@ -529,7 +529,7 @@
 
                                                             <time dateTime={{ $event->dateTime() }}
                                                                 class="ml-3 hidden flex-none text-gray-500 group-hover:text-indigo-600 xl:block">
-                                                                {{ $event->time() }}
+                                                                {{ $event->time($formatEventTime) }}
                                                             </time>
                                                         </span>
                                                     </li>
@@ -603,7 +603,7 @@
                                         <time dateTime={{ $event->dateTime() }}
                                             class="mt-2 flex items-center text-gray-700">
                                             <ClockIcon class="mr-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                                            {{ $event->time() }}
+                                            {{ $event->time($formatEventTime) }}
                                         </time>
                                     </div>
                                     <span

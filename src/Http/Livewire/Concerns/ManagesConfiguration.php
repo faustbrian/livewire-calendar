@@ -8,7 +8,11 @@ use Carbon\Carbon;
 
 trait ManagesConfiguration
 {
-    public ?int $weekStartsAt = Carbon::MONDAY;
+    public int $weekStartsAt = Carbon::MONDAY;
 
-    public ?int $weekEndsAt = Carbon::SUNDAY;
+    public int $weekEndsAt = Carbon::SUNDAY;
+
+    public string $formatEventTime = 'g:i A';
+
+    public string $formatTimeLabel = 'gA';
 }
