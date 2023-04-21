@@ -81,6 +81,11 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day, Closure\\(Carbon\\\\Carbon\\)\\: PreemStudio\\\\LivewireCalendar\\\\Data\\\\Day given\\.$#"
+			count: 1
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
 			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:mapWithKeys\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: array\\<int, PreemStudio\\\\LivewireCalendar\\\\Data\\\\Month\\>, Closure\\(Carbon\\\\Carbon\\)\\: non\\-empty\\-array\\<int, PreemStudio\\\\LivewireCalendar\\\\Data\\\\Month\\> given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
@@ -102,10 +107,10 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$value of function collect expects Illuminate\\\\Contracts\\\\Support\\\\Arrayable\\<\\(int\\|string\\), Carbon\\\\CarbonInterface\\|null\\>\\|iterable\\<\\(int\\|string\\), Carbon\\\\CarbonInterface\\|null\\>\\|null, Carbon\\\\CarbonPeriod given\\.$#"
-			count: 1
+			count: 2
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
 			message: "#^Unable to resolve the template type TKey in call to function collect$#"
-			count: 1
+			count: 2
 			path: src/Http/Livewire/AbstractCalendar.php

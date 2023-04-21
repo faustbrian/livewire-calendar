@@ -6,7 +6,6 @@ namespace PreemStudio\LivewireCalendar\Http\Livewire\Concerns;
 
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
-use Exception;
 use Illuminate\Support\Collection;
 use PreemStudio\LivewireCalendar\Data\Day;
 use PreemStudio\LivewireCalendar\Data\Month;
@@ -25,52 +24,33 @@ trait ManagesGrid
                     $this->selectedDateTime->clone()->endOfYear()->endOfWeek($this->weekEndsAt)->startOfDay(),
                 ),
             )->mapWithKeys(fn (Carbon $month) => [
-                $month->month => $this->monthGrid($month->month, $month->clone()->startOfMonth(), $month->clone()->endOfMonth()),
+                $month->month => $this->mapMonth($month->month, $month->clone()->startOfMonth(), $month->clone()->endOfMonth()),
             ]),
         );
     }
 
-    public function monthGrid(int $month, Carbon $startsAt, Carbon $endsAt): Month
+    public function mapMonth(int $month, Carbon $startsAt, Carbon $endsAt): Month
     {
         $firstDayOfGrid = $startsAt->clone()->startOfWeek($this->weekStartsAt);
         $lastDayOfGrid = $endsAt->clone()->endOfWeek($this->weekEndsAt);
 
-        $diffInWeeks = $lastDayOfGrid->diffInWeeks($firstDayOfGrid);
+        $weeks = collect(
+            CarbonPeriod::create(
+                $firstDayOfGrid,
+                '1 day',
+                $lastDayOfGrid->addWeeks(6 - $lastDayOfGrid->diffInWeeks($firstDayOfGrid)),
+            ),
+        )
+            ->map(fn (Carbon $date): Day => new Day(
+                date: $date->clone(),
+                isCurrentMonth: $date->month === $month,
+                isToday: $date->isToday(),
+            ))
+            ->chunk(7)
+            ->map(fn (Collection $days) => new Week($days->values()));
 
-        if ($lastDayOfGrid->diffInWeeks($firstDayOfGrid) !== 6) {
-            $lastDayOfGrid = $lastDayOfGrid->addWeeks(6 - $diffInWeeks);
-        }
+        $weeks->pop();
 
-        $numbersOfWeeks = $lastDayOfGrid->diffInWeeks($firstDayOfGrid) + 1;
-        $days = $lastDayOfGrid->diffInDays($firstDayOfGrid) + 1;
-
-        if ($days % 7 !== 0) {
-            throw new Exception('Livewire Calendar not correctly configured. Check initial inputs.');
-        }
-
-        $monthGrid = new Collection();
-        $currentDay = $firstDayOfGrid->clone();
-
-        while (!$currentDay->greaterThan($lastDayOfGrid)) {
-            $monthGrid->push(
-                new Day(
-                    date: $currentDay->clone(),
-                    isCurrentMonth: $currentDay->month === $month,
-                    isToday: $currentDay->isToday(),
-                ),
-            );
-
-            $currentDay->addDay();
-        }
-
-        $monthGrid = $monthGrid->chunk(7);
-
-        if ($numbersOfWeeks !== $monthGrid->count()) {
-            throw new Exception('Livewire Calendar calculated wrong number of weeks. Sorry :(');
-        }
-
-        $monthGrid->pop();
-
-        return new Month($month, $monthGrid->map(fn (Collection $days) => new Week($days->values())));
+        return new Month($month, $weeks);
     }
 }

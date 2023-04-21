@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\Feature\Http\Livewire;
 
 use Carbon\Carbon;
-use Exception;
 use Illuminate\Support\Collection;
 use Livewire\Livewire;
 use PreemStudio\LivewireCalendar\Data\Day;
@@ -150,22 +149,15 @@ it('calculates the correct number of weeks for each month', function (): void {
     $months = $component->getYear()->months;
 
     $months->each(function ($month, $key) use ($component): void {
-        $monthGrid = $component->monthGrid($key, $month->weeks->first()->days->first()->date, $month->weeks->last()->days->last()->date);
-        $numberOfWeeks = $monthGrid->weeks->count();
+        $mapMonth = $component->mapMonth($key, $month->weeks->first()->days->first()->date, $month->weeks->last()->days->last()->date);
+        $numberOfWeeks = $mapMonth->weeks->count();
 
         expect($numberOfWeeks)->toBeGreaterThanOrEqual(4);
         expect($numberOfWeeks)->toBeLessThanOrEqual(6);
     });
 });
 
-it('throws an exception when the calendar is not correctly configured', function (): void {
-    $component = (new Calendar())->mount();
-    $component->weekStartsAt = 0;
-
-    $component->getYear()->months;
-})->throws(Exception::class);
-
-todo('checks if monthGrid throws an exception when the number of weeks is not correctly calculated');
+todo('checks if mapMonth throws an exception when the number of weeks is not correctly calculated');
 
 it('gets events for a specific day', function (): void {
     $component = (new Calendar())->mount();
@@ -238,8 +230,8 @@ it('checks if the first day of the month grid is the correct day of the week', f
     $months = $component->getYear()->months;
 
     $months->each(function ($month, $key) use ($component): void {
-        $monthGrid = $component->monthGrid($key, $month->weeks->first()->days->first()->date, $month->weeks->last()->days->last()->date);
-        $firstDayOfGrid = $monthGrid->weeks->first()->days->first();
+        $mapMonth = $component->mapMonth($key, $month->weeks->first()->days->first()->date, $month->weeks->last()->days->last()->date);
+        $firstDayOfGrid = $mapMonth->weeks->first()->days->first();
 
         expect($firstDayOfGrid->date->dayOfWeek)->toEqual($component->weekStartsAt);
     });
@@ -250,8 +242,8 @@ it('checks if the last day of the month grid is the correct day of the week', fu
     $months = $component->getYear()->months;
 
     $months->each(function ($month, $key) use ($component): void {
-        $monthGrid = $component->monthGrid($key, $month->weeks->first()->days->first()->date, $month->weeks->last()->days->last()->date);
-        $lastDayOfGrid = $monthGrid->weeks->last()->days->last();
+        $mapMonth = $component->mapMonth($key, $month->weeks->first()->days->first()->date, $month->weeks->last()->days->last()->date);
+        $lastDayOfGrid = $mapMonth->weeks->last()->days->last();
 
         expect($lastDayOfGrid->date->dayOfWeek)->toEqual($component->weekEndsAt);
     });
@@ -265,8 +257,8 @@ it('checks if the selected month and year are correctly set', function (): void 
 
     expect($months->keys()->contains($selectedMonth))->toBeTrue();
 
-    $selectedMonthGrid = $component->getSelectedMonth($months);
-    $selectedMonthGrid->weeks->each(function ($week) use ($selectedYear): void {
+    $selectedmapMonth = $component->getSelectedMonth($months);
+    $selectedmapMonth->weeks->each(function ($week) use ($selectedYear): void {
         $week->days->each(function ($day) use ($selectedYear): void {
             expect($day->date->year)->toEqual($selectedYear);
         });
