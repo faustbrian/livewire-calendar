@@ -20,9 +20,9 @@ trait ManagesGrid
         return new Year(
             collect(
                 CarbonPeriod::create(
-                    $this->selectedDateTime->clone()->startOfYear(),
+                    $this->selectedDateTime->clone()->startOfYear()->startOfWeek($this->weekStartsAt),
                     '1 month',
-                    $this->selectedDateTime->clone()->endOfYear()->startOfDay(),
+                    $this->selectedDateTime->clone()->endOfYear()->endOfWeek($this->weekEndsAt)->startOfDay(),
                 ),
             )->mapWithKeys(fn (Carbon $month) => [
                 $month->month => $this->monthGrid($month->month, $month->clone()->startOfMonth(), $month->clone()->endOfMonth()),

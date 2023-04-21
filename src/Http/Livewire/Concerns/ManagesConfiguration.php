@@ -11,14 +11,4 @@ trait ManagesConfiguration
     public ?int $weekStartsAt = Carbon::MONDAY;
 
     public ?int $weekEndsAt = Carbon::SUNDAY;
-
-    protected function getWeekStart(): int
-    {
-        return $this->weekStartsAt;
-    }
-
-    protected function getWeekEnd(): int
-    {
-        return $this->weekEndsAt;
-    }
 }

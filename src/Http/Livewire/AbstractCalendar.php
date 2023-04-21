@@ -15,6 +15,7 @@ abstract class AbstractCalendar extends Component
     use Concerns\ManagesEvents;
     use Concerns\ManagesGrid;
     use Concerns\ManagesHooks;
+    use Concerns\ManagesLabels;
     use Concerns\ManagesMonths;
     use Concerns\ManagesView;
     use Concerns\ManagesWeeks;

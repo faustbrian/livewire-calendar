@@ -252,7 +252,7 @@
                                 style="grid-template-rows: repeat(48, minmax(3.5rem, 1fr))">
                                 <div class="row-end-1 h-7"></div>
 
-                                @foreach ($timesOfDay as $time)
+                                @foreach ($timeLabels as $timeLabel)
                                     @unless ($loop->first)
                                         <div></div>
                                     @endunless
@@ -260,7 +260,7 @@
                                     <div>
                                         <div
                                             class="sticky left-0 z-20 -ml-14 -mt-2.5 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                                            {{ $time }}
+                                            {{ $timeLabel->toString() }}
                                         </div>
                                     </div>
 
@@ -327,8 +327,8 @@
                         </button>
                     </div>
                     <div class="mt-6 grid grid-cols-7 text-center text-xs leading-6 text-gray-500">
-                        @foreach ($week->days as $weekDay)
-                            <div>{{ $weekDay->character() }}</div>
+                        @foreach ($dayLabels as $dayLabel)
+                            <div>{{ $dayLabel->getCharacter() }}</div>
                         @endforeach
                     </div>
                     <div
@@ -420,7 +420,7 @@
                                 style="grid-template-rows: repeat(48, minmax(3.5rem, 1fr))">
                                 <div class="row-end-1 h-7"></div>
 
-                                @foreach ($timesOfDay as $time)
+                                @foreach ($timeLabels as $timeLabel)
                                     @unless ($loop->first)
                                         <div></div>
                                     @endunless
@@ -428,7 +428,7 @@
                                     <div>
                                         <div
                                             class="sticky left-0 z-20 -ml-14 -mt-2.5 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                                            {{ $time }}
+                                            {{ $timeLabel->toString() }}
                                         </div>
                                     </div>
 
@@ -490,13 +490,14 @@
                 <div class="shadow ring-1 ring-black ring-opacity-5 lg:flex lg:flex-auto lg:flex-col">
                     <div
                         class="grid grid-cols-7 gap-px border-b border-gray-300 bg-gray-200 text-center text-xs font-semibold leading-6 text-gray-700 lg:flex-none">
-                        @foreach ($month->weeks->first()->days as $day)
+                        @foreach ($dayLabels as $dayLabel)
                             <div class="flex justify-center bg-white py-2">
-                                <span>{{ $day->character() }}</span>
-                                <span class="sr-only sm:not-sr-only">{{ $day->characterSuffix() }}</span>
+                                <span>{{ $dayLabel->getCharacter() }}</span>
+                                <span class="sr-only sm:not-sr-only">{{ $dayLabel->getCharacterSuffix() }}</span>
                             </div>
                         @endforeach
                     </div>
+
                     <div class="flex bg-gray-200 text-xs leading-6 text-gray-700 lg:flex-auto">
                         <div class="hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-6 lg:gap-px">
                             @foreach ($month->weeks as $week)
@@ -628,8 +629,8 @@
                         </h2>
 
                         <div class="mt-6 grid grid-cols-7 text-xs leading-6 text-gray-500">
-                            @foreach ($week->days as $day)
-                                <div>{{ $day->character() }}</div>
+                            @foreach ($dayLabels as $dayLabel)
+                                <div>{{ $dayLabel->getCharacter() }}</div>
                             @endforeach
                         </div>
 
