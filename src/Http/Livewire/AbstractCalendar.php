@@ -6,7 +6,7 @@ namespace PreemStudio\LivewireCalendar\Http\Livewire;
 
 use Livewire\Component;
 
-final class Calendar extends Component
+abstract class AbstractCalendar extends Component
 {
     use Concerns\ManagesComponent;
     use Concerns\ManagesConfiguration;

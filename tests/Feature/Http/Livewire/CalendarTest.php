@@ -11,7 +11,7 @@ use Livewire\Livewire;
 use PreemStudio\LivewireCalendar\Data\Day;
 use PreemStudio\LivewireCalendar\Data\Month;
 use PreemStudio\LivewireCalendar\Data\Week;
-use PreemStudio\LivewireCalendar\Http\Livewire\Calendar;
+use Tests\Fixtures\Calendar;
 
 beforeEach(function (): void {
     Carbon::setTestNow($today = Carbon::now());
