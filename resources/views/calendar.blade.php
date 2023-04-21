@@ -275,7 +275,7 @@
                                 @foreach ($this->eventsForDay($day, $events) as $event)
                                     <li class="relative mt-px flex" style="{{ $event->calculateGridRow() }}">
                                         <span
-                                            class="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-blue-50 p-2 text-xs leading-5 hover:bg-blue-100"
+                                            class="group absolute inset-1 flex cursor-pointer flex-col overflow-y-auto rounded-lg bg-blue-50 p-2 text-xs leading-5 hover:bg-blue-100"
                                             wire:click="onEventClick('{{ $event->id }}')">
                                             <p class="order-1 font-semibold text-blue-700">
                                                 {{ $event->name }}
@@ -457,7 +457,7 @@
                                         <li class="sm:col-start-{{ $dayIndex + 1 }} relative mt-px flex"
                                             style="{{ $event->calculateGridRow() }}">
                                             <span
-                                                class="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-blue-50 p-2 text-xs leading-5 hover:bg-blue-100"
+                                                class="group absolute inset-1 flex cursor-pointer flex-col overflow-y-auto rounded-lg bg-blue-50 p-2 text-xs leading-5 hover:bg-blue-100"
                                                 wire:click="onEventClick('{{ $event->id }}')">
                                                 <p class="order-1 font-semibold text-blue-700">
                                                     {{ $event->name }}
@@ -520,7 +520,7 @@
                                             <ol class="mt-2">
                                                 @foreach ($this->eventsForDay($day, $events) as $event)
                                                     <li>
-                                                        <span class="group flex"
+                                                        <span class="group flex cursor-pointer"
                                                             wire:click="onEventClick('{{ $event->id }}')">
                                                             <p
                                                                 class="flex-auto truncate font-medium text-gray-900 group-hover:text-indigo-600">

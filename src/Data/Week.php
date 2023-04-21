@@ -16,39 +16,4 @@ final readonly class Week
     ) {
         //
     }
-
-    public function monday(): Day
-    {
-        return $this->days->first();
-    }
-
-    public function tuesday(): Day
-    {
-        return $this->days->get(1);
-    }
-
-    public function wednesday(): Day
-    {
-        return $this->days->get(2);
-    }
-
-    public function thursday(): Day
-    {
-        return $this->days->get(3);
-    }
-
-    public function friday(): Day
-    {
-        return $this->days->get(4);
-    }
-
-    public function saturday(): Day
-    {
-        return $this->days->get(5);
-    }
-
-    public function sunday(): Day
-    {
-        return $this->days->last();
-    }
 }
