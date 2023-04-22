@@ -24,6 +24,6 @@ final readonly class DayLabel
 
     public function getCharacterSuffix(): string
     {
-        return \mb_substr($this->name, 1);
+        return \mb_substr($this->name, 1, 2);
     }
 }

@@ -25,7 +25,7 @@ it('can get character suffix', function (): void {
     $name = 'Sunday';
     $dayLabel = new DayLabel($name);
 
-    expect($dayLabel->getCharacterSuffix())->toBe('unday');
+    expect($dayLabel->getCharacterSuffix())->toBe('un');
 });
 
 it('can be initialized with name property', function (): void {
