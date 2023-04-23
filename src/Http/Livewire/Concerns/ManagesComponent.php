@@ -9,9 +9,24 @@ use Illuminate\View\View;
 
 trait ManagesComponent
 {
-    public function mount(): self
-    {
+    public function mount(
+        ?int $year = null,
+        ?int $month = null,
+        ?int $day = null,
+    ): self {
         $this->selectedDateTime = Carbon::now();
+
+        if ($day !== null) {
+            $this->selectedDateTime->setDay($day);
+        }
+
+        if ($month !== null) {
+            $this->selectedDateTime->setMonth($month);
+        }
+
+        if ($year !== null) {
+            $this->selectedDateTime->setYear($year);
+        }
 
         return $this;
     }
