@@ -76,12 +76,12 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\>, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Month\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\>, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Month\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\> given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
