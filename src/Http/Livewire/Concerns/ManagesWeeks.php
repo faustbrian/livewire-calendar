@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+namespace BombenProdukt\LivewireCalendar\Http\Livewire\Concerns;
+
+use Illuminate\Support\Collection;
+use BombenProdukt\LivewireCalendar\Data\Day;
+use BombenProdukt\LivewireCalendar\Data\Week;
+
+trait ManagesWeeks
+{
+    public function getSelectedWeek(Collection $months): Week
+    {
+        return $this
+            ->getSelectedMonth($months)
+            ->weeks
+            ->flatten()
+            ->filter(fn (Week $week) => $week->days->filter(fn (Day $day): bool => $day->date->weekOfYear === $this->selectedDateTime->weekOfYear)->count() > 0)
+            ->first();
+    }
+}
