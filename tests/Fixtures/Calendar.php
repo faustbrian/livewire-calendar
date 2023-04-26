@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Fixtures;
 
-use Illuminate\Support\Collection;
 use BombenProdukt\LivewireCalendar\Data\Event;
 use BombenProdukt\LivewireCalendar\Http\Livewire\AbstractCalendar;
+use Illuminate\Support\Collection;
 
 final class Calendar extends AbstractCalendar
 {

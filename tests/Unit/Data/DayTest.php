@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Data;
 
-use Carbon\Carbon;
 use BombenProdukt\LivewireCalendar\Data\Day;
+use Carbon\Carbon;
 
 it('can determine if today', function (): void {
     $today = Carbon::today();

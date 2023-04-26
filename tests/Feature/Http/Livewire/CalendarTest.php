@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Http\Livewire;
 
-use Carbon\Carbon;
-use Illuminate\Support\Collection;
-use Livewire\Livewire;
 use BombenProdukt\LivewireCalendar\Data\Day;
 use BombenProdukt\LivewireCalendar\Data\Month;
 use BombenProdukt\LivewireCalendar\Data\Week;
+use Carbon\Carbon;
+use Illuminate\Support\Collection;
+use Livewire\Livewire;
 use Tests\Fixtures\Calendar;
 
 beforeEach(function (): void {

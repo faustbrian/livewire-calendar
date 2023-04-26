@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Http\Livewire\Concerns;
 
-use Carbon\Carbon;
-use Carbon\CarbonPeriod;
 use BombenProdukt\LivewireCalendar\Data\DayLabel;
 use BombenProdukt\LivewireCalendar\Data\TimeLabel;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
 
 trait ManagesLabels
 {

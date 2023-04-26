@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Data;
 
-use Carbon\Carbon;
 use BombenProdukt\LivewireCalendar\Data\Event;
+use Carbon\Carbon;
 
 it('can format time', function (): void {
     $startTime = Carbon::create(2023, 4, 22, 12, 0, 0);

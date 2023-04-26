@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Http\Livewire\Concerns;
 
-use Illuminate\Support\Collection;
 use BombenProdukt\LivewireCalendar\Data\Day;
 use BombenProdukt\LivewireCalendar\Data\Event;
+use Illuminate\Support\Collection;
 
 trait ManagesEvents
 {

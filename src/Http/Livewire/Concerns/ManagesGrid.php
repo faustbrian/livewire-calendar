@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Http\Livewire\Concerns;
 
-use Carbon\Carbon;
-use Carbon\CarbonPeriod;
-use Illuminate\Support\Collection;
 use BombenProdukt\LivewireCalendar\Data\Day;
 use BombenProdukt\LivewireCalendar\Data\Month;
 use BombenProdukt\LivewireCalendar\Data\Week;
 use BombenProdukt\LivewireCalendar\Data\Year;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
+use Illuminate\Support\Collection;
 
 trait ManagesGrid
 {

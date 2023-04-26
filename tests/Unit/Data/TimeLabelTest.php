@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Data;
 
-use Carbon\Carbon;
 use BombenProdukt\LivewireCalendar\Data\TimeLabel;
+use Carbon\Carbon;
 use ReflectionClass;
 
 it('can convert to string', function (): void {
