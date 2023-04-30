@@ -7,28 +7,12 @@ namespace BombenProdukt\LivewireCalendar\Http\Livewire\Concerns;
 use BombenProdukt\LivewireCalendar\Data\Day;
 use BombenProdukt\LivewireCalendar\Data\Month;
 use BombenProdukt\LivewireCalendar\Data\Week;
-use BombenProdukt\LivewireCalendar\Data\Year;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Support\Collection;
 
 trait ManagesGrid
 {
-    public function getYear(): Year
-    {
-        return new Year(
-            collect(
-                CarbonPeriod::create(
-                    $this->selectedDateTime->clone()->startOfYear()->startOfWeek($this->weekStartsAt),
-                    '1 month',
-                    $this->selectedDateTime->clone()->endOfYear()->endOfWeek($this->weekEndsAt)->startOfDay(),
-                ),
-            )->mapWithKeys(fn (Carbon $month) => [
-                $month->month => $this->mapMonth($month->month, $month->clone()->startOfMonth(), $month->clone()->endOfMonth()),
-            ]),
-        );
-    }
-
     public function mapMonth(int $month, Carbon $startsAt, Carbon $endsAt): Month
     {
         $firstDayOfGrid = $startsAt->clone()->startOfWeek($this->weekStartsAt);
