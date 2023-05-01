@@ -349,7 +349,7 @@ it('checks if the selected day, week, month, and year are correctly set after se
     // $selectedMonth = $component->getSelectedMonth($months);
 
     expect($selectedDay->date->month)->toEqual($monthToSelect);
-    expect($selectedWeek->days->contains($selectedDay))->toBeTrue();
+    expect($selectedWeek->days)->toContainDay($selectedDay);
     // expect($selectedMonth->contains($selectedWeek))->toBeTrue();
 });
 
@@ -364,7 +364,7 @@ it('checks if the selected day, week, month, and year are correctly set after se
     // $selectedMonth = $component->getSelectedMonth($months);
 
     expect($selectedDay->date->year)->toEqual($yearToSelect);
-    expect($selectedWeek->days->contains($selectedDay))->toBeTrue();
+    expect($selectedWeek->days)->toContainDay($selectedDay);
     // expect($selectedMonth->contains($selectedWeek))->toBeTrue();
 });
 
@@ -381,14 +381,13 @@ it('checks if the selected day, week, month, and year are correctly set after mo
     // $selectedMonth = $component->call('getSelectedMonth', $months);
 
     expect($selectedDay->date->isSameDay($previousDay->date->addMonth()))->toBeTrue();
-    expect($selectedWeek->days->contains($selectedDay))->toBeTrue();
+    expect($selectedWeek->days)->toContainDay($selectedDay);
     // expect($selectedMonth->contains($selectedWeek))->toBeTrue();
 });
 
 it('checks if the selected day, week, month, and year are correctly set after moving the cursor to today', function (): void {
     $component = (new Calendar())->mount();
-    $action = 'today';
-    $component->moveCursor($action);
+    $component->moveCursor('today');
 
     $months = $component->getYear()->months;
     $selectedDay = $component->getSelectedDay($months);
@@ -398,7 +397,7 @@ it('checks if the selected day, week, month, and year are correctly set after mo
     $expectedSelectedDay = Carbon::now();
 
     expect($selectedDay->date->isSameDay($expectedSelectedDay))->toBeTrue();
-    expect($selectedWeek->days->contains($selectedDay))->toBeTrue();
+    expect($selectedWeek->days)->toContainDay($selectedDay);
     // expect($selectedMonth->contains($selectedWeek))->toBeTrue();
 });
 

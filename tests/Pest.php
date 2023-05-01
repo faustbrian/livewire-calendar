@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use BombenProdukt\LivewireCalendar\Data\Day;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -33,8 +35,8 @@ uses(
 |
 */
 
-expect()->extend('toBeOne', function () {
-    return $this->toBe(1);
+expect()->extend('toContainDay', function (Day $expected): void {
+    expect($this->value->filter(fn (Day $day) => $day->date->isSameDay($expected->date)))->toHaveCount(1);
 });
 
 /*
