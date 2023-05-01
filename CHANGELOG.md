@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [2.0.0] - 2023-05-01
+### Added
+- make remaining data classes swappable
+- add macro support for data classes
+
+### Changed
+- make data classes swappable
+
+
 ## [1.0.3] - 2023-05-01
 ### Added
 - add meta property to event class
@@ -25,7 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-04-26
 
-[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.0.3...HEAD
+[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/BombenProdukt/package_slug/compare/1.0.3...2.0.0
 [1.0.3]: https://github.com/BombenProdukt/package_slug/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/BombenProdukt/package_slug/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/BombenProdukt/package_slug/compare/1.0.0...1.0.1
