@@ -50,4 +50,9 @@ trait ManagesHooks
     {
         $this->redirect($this->events()->firstWhere('id', $id)->href);
     }
+
+    public function onEventDropped(string $eventId, string $date): void
+    {
+        //
+    }
 }

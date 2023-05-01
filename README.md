@@ -120,3 +120,49 @@ Alternatively you can use the `@livewire` blade directive:
 ```php
 @livewire('calendar')
 ```
+
+### Drag and Drop
+
+If you want to enable drag and drop functionality you will need to include the following JavaScript in your application. This will allow you to drag and drop events to different days.
+
+> **Note**
+> We recommend to put this into your **resources/js/app.js** file.
+
+```js
+window.onLivewireCalendarEventDragStart = function(event, eventId) {
+	event.dataTransfer.setData('id', eventId);
+};
+
+window.onLivewireCalendarEventDragEnter = function(event, componentId, dateString, dragAndDropClasses) {
+	event.stopPropagation();
+	event.preventDefault();
+
+	const element = document.getElementById(`${componentId}-${dateString}`);
+	element.className = `${element.className} ${dragAndDropClasses}`;
+};
+
+window.onLivewireCalendarEventDragLeave = function(event, componentId, dateString, dragAndDropClasses) {
+	event.stopPropagation();
+	event.preventDefault();
+
+	const element = document.getElementById(`${componentId}-${dateString}`);
+	element.className = element.className.replace(dragAndDropClasses, '');
+};
+
+window.onLivewireCalendarEventDragOver = function(event) {
+	event.stopPropagation();
+	event.preventDefault();
+};
+
+window.onLivewireCalendarEventDrop = function(event, componentId, dateString, dragAndDropClasses) {
+	event.stopPropagation();
+	event.preventDefault();
+
+	const element = document.getElementById(`${componentId}-${dateString}`);
+	element.className = element.className.replace(dragAndDropClasses, '');
+
+	window.Livewire
+		.find(componentId)
+		.call('onEventDropped', event.dataTransfer.getData('id'), dateString);
+};
+```

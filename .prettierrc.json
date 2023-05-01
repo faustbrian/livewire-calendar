@@ -1,10 +1,10 @@
 {
     "printWidth": 120,
     "tabWidth": 4,
-    "wrapAttributes": "auto",
+    "wrapAttributes": "force-expand-multiline",
     "sortTailwindcssClasses": true,
-    "sortHtmlAttributes": "none",
-    "noPhpSyntaxCheck": false,
+    "semi": true,
+    "sortHtmlAttributes": "code-guide",
     "plugins": [
         "@shufo/prettier-plugin-blade"
     ],

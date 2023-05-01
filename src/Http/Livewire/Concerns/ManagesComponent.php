@@ -34,6 +34,8 @@ trait ManagesComponent
     public function render(): View
     {
         return view(config('livewire-calendar.views.calendar'))->with([
+            'componentId' => $this->id,
+            'dragAndDropClasses' => '',
             'events' => $this->events(),
             'year' => $year = $this->getYear(),
             'month' => $this->getSelectedMonth($year->months),
