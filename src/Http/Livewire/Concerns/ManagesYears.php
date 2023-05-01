@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Http\Livewire\Concerns;
 
-use BombenProdukt\LivewireCalendar\Data\Year;
+use BombenProdukt\LivewireCalendar\Calendar;
+use BombenProdukt\LivewireCalendar\Contracts\YearInterface;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 
 trait ManagesYears
 {
-    public function getYear(): Year
+    public function getYear(): YearInterface
     {
-        return new Year(
-            collect(
+        return Calendar::createYear(
+            months: collect(
                 CarbonPeriod::create(
                     $this->selectedDateTime->clone()->startOfWeek($this->weekStartsAt)->startOfYear(),
                     '1 month',

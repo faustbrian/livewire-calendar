@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Http\Livewire\Concerns;
 
-use BombenProdukt\LivewireCalendar\Data\Day;
-use BombenProdukt\LivewireCalendar\Data\Event;
+use BombenProdukt\LivewireCalendar\Contracts\DayInterface;
+use BombenProdukt\LivewireCalendar\Contracts\EventInterface;
 use Illuminate\Support\Collection;
 
 trait ManagesEvents
@@ -15,8 +15,8 @@ trait ManagesEvents
         return new Collection();
     }
 
-    public function eventsForDay(Day $day, Collection $events): Collection
+    public function eventsForDay(DayInterface $day, Collection $events): Collection
     {
-        return $events->filter(fn (Event $event) => $event->startTime->toDateString() === $day->date->toDateString());
+        return $events->filter(fn (EventInterface $event) => $event->startTime->toDateString() === $day->date->toDateString());
     }
 }

@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Data;
 
+use BombenProdukt\LivewireCalendar\Contracts\DayInterface;
 use Carbon\Carbon;
 
-final readonly class Day
+final readonly class Day implements DayInterface
 {
     public function __construct(
         public Carbon $date,

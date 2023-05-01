@@ -6,6 +6,31 @@ parameters:
 			path: src/Data/Month.php
 
 		-
+			message: "#^Access to an undefined property BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface\\:\\:\\$date\\.$#"
+			count: 4
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Access to an undefined property BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\EventInterface\\:\\:\\$startTime\\.$#"
+			count: 1
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Access to an undefined property BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\:\\:\\$weeks\\.$#"
+			count: 2
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Access to an undefined property BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\WeekInterface\\:\\:\\$days\\.$#"
+			count: 2
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Access to an undefined property BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\YearInterface\\:\\:\\$months\\.$#"
+			count: 3
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
 			message: "#^Cannot access property \\$href on mixed\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
@@ -36,7 +61,7 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Method BombenProdukt\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getSelectedDay\\(\\) should return BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day but returns mixed\\.$#"
+			message: "#^Method BombenProdukt\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getSelectedDay\\(\\) should return BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface but returns mixed\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
@@ -46,17 +71,12 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Method BombenProdukt\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getSelectedMonth\\(\\) should return BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Month but returns mixed\\.$#"
+			message: "#^Method BombenProdukt\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getSelectedMonth\\(\\) should return BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface but returns mixed\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
 			message: "#^Method BombenProdukt\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getSelectedWeek\\(\\) has parameter \\$months with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/Http/Livewire/AbstractCalendar.php
-
-		-
-			message: "#^Method BombenProdukt\\\\LivewireCalendar\\\\Http\\\\Livewire\\\\AbstractCalendar\\:\\:getSelectedWeek\\(\\) should return BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week but returns mixed\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
@@ -71,37 +91,32 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, \\(int\\|string\\)\\)\\: bool\\)\\|null, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Event\\)\\: bool given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, \\(int\\|string\\)\\)\\: bool\\)\\|null, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\EventInterface\\)\\: bool given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\>, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Month\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: mixed, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\)\\: mixed given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:mapWithKeys\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Month\\>, Closure\\(Carbon\\\\Carbon\\)\\: non\\-empty\\-array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Month\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:mapWithKeys\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\>, Closure\\(Carbon\\\\Carbon\\)\\: non\\-empty\\-array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\> given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, int\\)\\: bool\\)\\|null, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day\\)\\: bool given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, int\\)\\: bool\\)\\|null, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface\\)\\: mixed given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, int\\)\\: bool\\)\\|null, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\)\\: bool given\\.$#"
-			count: 1
-			path: src/Http/Livewire/AbstractCalendar.php
-
-		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, int\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day\\>, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Week\\)\\: Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\LivewireCalendar\\\\Data\\\\Day\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<int,mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, int\\)\\: mixed, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\WeekInterface\\)\\: mixed given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
@@ -113,4 +128,14 @@ parameters:
 		-
 			message: "#^Unable to resolve the template type TKey in call to function collect$#"
 			count: 2
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Unable to resolve the template type TMapValue in call to method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\)$#"
+			count: 1
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Unable to resolve the template type TMapValue in call to method Illuminate\\\\Support\\\\Collection\\<int,mixed\\>\\:\\:map\\(\\)$#"
+			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php

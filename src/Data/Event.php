@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Data;
 
+use BombenProdukt\LivewireCalendar\Contracts\EventInterface;
 use Carbon\Carbon;
 
-final readonly class Event
+final readonly class Event implements EventInterface
 {
     public function __construct(
         public string $id,
