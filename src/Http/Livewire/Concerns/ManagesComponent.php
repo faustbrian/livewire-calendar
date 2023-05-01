@@ -33,7 +33,7 @@ trait ManagesComponent
 
     public function render(): View
     {
-        return view('livewire-calendar::calendar')->with([
+        return view(config('livewire-calendar.views.calendar'))->with([
             'events' => $this->events(),
             'year' => $year = $this->getYear(),
             'month' => $this->getSelectedMonth($year->months),
