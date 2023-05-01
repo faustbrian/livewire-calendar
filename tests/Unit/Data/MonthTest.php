@@ -12,7 +12,7 @@ it('can get name', function (): void {
     $week = new Week(new Collection());
     $month = new Month(4, new Collection([$week]));
 
-    expect($month->name())->toBe('April');
+    expect($month->getName())->toBe('April');
 });
 
 it('can be initialized with properties', function (): void {

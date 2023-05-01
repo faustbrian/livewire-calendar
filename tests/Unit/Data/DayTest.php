@@ -18,28 +18,28 @@ it('can get short name', function (): void {
     $date = Carbon::create(2023, 4, 22);
     $day = new Day($date, true, false);
 
-    expect($day->shortName())->toBe('Sat');
+    expect($day->getShortName())->toBe('Sat');
 });
 
 it('can get character', function (): void {
     $date = Carbon::create(2023, 4, 22);
     $day = new Day($date, true, false);
 
-    expect($day->character())->toBe('S');
+    expect($day->getCharacter())->toBe('S');
 });
 
 it('can get character suffix', function (): void {
     $date = Carbon::create(2023, 4, 22);
     $day = new Day($date, true, false);
 
-    expect($day->characterSuffix())->toBe('at');
+    expect($day->getCharacterSuffix())->toBe('at');
 });
 
 it('can get number', function (): void {
     $date = Carbon::create(2023, 4, 22);
     $day = new Day($date, true, false);
 
-    expect($day->number())->toBe('22');
+    expect($day->getNumber())->toBe('22');
 });
 
 it('can be initialized with isCurrentMonth, isToday, and isSelected properties', function (): void {

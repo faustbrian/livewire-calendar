@@ -81,12 +81,12 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Carbon\\\\CarbonInterface\\)\\: mixed\\)\\|null, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\DayLabel given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Carbon\\\\CarbonInterface\\)\\: mixed\\)\\|null, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayLabelInterface given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Carbon\\\\CarbonInterface\\)\\: mixed\\)\\|null, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Data\\\\TimeLabel given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Carbon\\\\CarbonInterface\\)\\: mixed\\)\\|null, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\TimeLabelInterface given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 

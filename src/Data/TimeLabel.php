@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Data;
 
+use BombenProdukt\LivewireCalendar\Contracts\TimeLabelInterface;
 use Carbon\Carbon;
 use Illuminate\Support\Traits\Macroable;
 
-final class TimeLabel
+final class TimeLabel implements TimeLabelInterface
 {
     use Macroable;
 
     public function __construct(
-        private string $dateTimeFormat,
         private Carbon $dateTime,
+        private string $dateTimeFormat,
     ) {
         //
     }

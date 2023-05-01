@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Data;
 
+use BombenProdukt\LivewireCalendar\Contracts\DayLabelInterface;
 use Illuminate\Support\Traits\Macroable;
 
-final class DayLabel
+final class DayLabel implements DayLabelInterface
 {
     use Macroable;
 

@@ -14,13 +14,13 @@ use Carbon\Carbon;
  */
 interface DayInterface
 {
+    public function getShortName(): string;
+
+    public function getCharacter(): string;
+
+    public function getCharacterSuffix(): string;
+
+    public function getNumber(): string;
+
     public function isToday(): bool;
-
-    public function shortName(): string;
-
-    public function character(): string;
-
-    public function characterSuffix(): string;
-
-    public function number(): string;
 }

@@ -49,7 +49,7 @@ declare(strict_types=1);
 namespace App\Http\Livewire;
 
 use Illuminate\Support\Collection;
-use BombenProdukt\LivewireCalendar\Data\Event;
+use BombenProdukt\LivewireCalendar\Calendar;
 use BombenProdukt\LivewireCalendar\Http\Livewire\AbstractCalendar;
 
 final class Calendar extends AbstractCalendar
@@ -57,7 +57,7 @@ final class Calendar extends AbstractCalendar
     public function events(): Collection
     {
         return new Collection([
-            new Event(
+            Calendar::createEvent(
                 id: 'unique-id',
                 name: 'Sales Meeting',
                 description: 'Review the sales for the month',
@@ -65,7 +65,7 @@ final class Calendar extends AbstractCalendar
                 startTime: Carbon::today()->addHours(8),
                 endTime: Carbon::today()->addHours(16),
             ),
-            new Event(
+            Calendar::createEvent(
                 id: 'another-unique-id',
                 name: 'Marketing Meeting',
                 description: 'Review the marketing for the month',

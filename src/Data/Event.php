@@ -25,22 +25,22 @@ final class Event implements EventInterface
         //
     }
 
-    public function time(string $dateTimeFormat): string
+    public function getTime(string $dateTimeFormat): string
     {
         return $this->startTime->format($dateTimeFormat);
     }
 
-    public function dateTime(): string
+    public function getDateTime(): string
     {
         return $this->startTime->toIso8601ZuluString();
     }
 
-    public function startTimeHuman(string $dateTimeFormat): string
+    public function getStartTimeForHumans(string $dateTimeFormat): string
     {
         return $this->startTime->format($dateTimeFormat);
     }
 
-    public function endTimeHuman(string $dateTimeFormat): string
+    public function getEndTimeForHumans(string $dateTimeFormat): string
     {
         return $this->endTime->format($dateTimeFormat);
     }

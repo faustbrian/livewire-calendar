@@ -21,28 +21,28 @@ final class Day implements DayInterface
         //
     }
 
-    public function isToday(): bool
-    {
-        return $this->date->isToday();
-    }
-
-    public function shortName(): string
+    public function getShortName(): string
     {
         return $this->date->format('D');
     }
 
-    public function character(): string
+    public function getCharacter(): string
     {
-        return \mb_strtoupper(\mb_substr($this->shortName(), 0, 1));
+        return \mb_strtoupper(\mb_substr($this->getShortName(), 0, 1));
     }
 
-    public function characterSuffix(): string
+    public function getCharacterSuffix(): string
     {
-        return \mb_substr($this->shortName(), 1);
+        return \mb_substr($this->getShortName(), 1);
     }
 
-    public function number(): string
+    public function getNumber(): string
     {
         return $this->date->format('d');
+    }
+
+    public function isToday(): bool
+    {
+        return $this->date->isToday();
     }
 }

@@ -22,7 +22,7 @@ final class Month implements MonthInterface
         //
     }
 
-    public function name(): string
+    public function getName(): string
     {
         return \date('F', \mktime(0, null, null, $this->number, 1));
     }

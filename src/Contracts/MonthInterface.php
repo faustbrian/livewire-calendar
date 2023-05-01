@@ -12,5 +12,5 @@ use Illuminate\Support\Collection;
  */
 interface MonthInterface
 {
-    public function name(): string;
+    public function getName(): string;
 }

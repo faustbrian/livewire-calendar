@@ -11,21 +11,21 @@ it('can format time', function (): void {
     $startTime = Carbon::create(2023, 4, 22, 12, 0, 0);
     $event = new Event('1', 'Test Event', 'Test Description', 'https://example.com', $startTime, $startTime->clone()->addHour());
 
-    expect($event->time('H:i'))->toBe('12:00');
+    expect($event->getTime('H:i'))->toBe('12:00');
 });
 
 it('can format date time', function (): void {
     $startTime = Carbon::create(2023, 4, 22, 12, 0, 0);
     $event = new Event('1', 'Test Event', 'Test Description', 'https://example.com', $startTime, $startTime->clone()->addHour());
 
-    expect($event->dateTime())->toBe($startTime->toIso8601ZuluString());
+    expect($event->getDateTime())->toBe($startTime->toIso8601ZuluString());
 });
 
 it('can format start time human', function (): void {
     $startTime = Carbon::create(2023, 4, 22, 12, 0, 0);
     $event = new Event('1', 'Test Event', 'Test Description', 'https://example.com', $startTime, $startTime->clone()->addHour());
 
-    expect($event->startTimeHuman('H:i'))->toBe('12:00');
+    expect($event->getStartTimeForHumans('H:i'))->toBe('12:00');
 });
 
 it('can format end time human', function (): void {
@@ -33,7 +33,7 @@ it('can format end time human', function (): void {
     $endTime = $startTime->clone()->addHour();
     $event = new Event('1', 'Test Event', 'Test Description', 'https://example.com', $startTime, $endTime);
 
-    expect($event->endTimeHuman('H:i'))->toBe('13:00');
+    expect($event->getEndTimeForHumans('H:i'))->toBe('13:00');
 });
 
 it('can calculate grid row', function (): void {

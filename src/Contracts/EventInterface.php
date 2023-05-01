@@ -18,13 +18,13 @@ use Carbon\Carbon;
  */
 interface EventInterface
 {
-    public function time(string $dateTimeFormat): string;
+    public function getTime(string $dateTimeFormat): string;
 
-    public function dateTime(): string;
+    public function getDateTime(): string;
 
-    public function startTimeHuman(string $dateTimeFormat): string;
+    public function getStartTimeForHumans(string $dateTimeFormat): string;
 
-    public function endTimeHuman(string $dateTimeFormat): string;
+    public function getEndTimeForHumans(string $dateTimeFormat): string;
 
     public function calculateGridRow(): string;
 }

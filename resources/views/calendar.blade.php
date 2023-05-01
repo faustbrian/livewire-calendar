@@ -229,7 +229,7 @@
                         @foreach ($week->days as $weekDay)
                             <button type="button" class="flex flex-col items-center pb-1.5 pt-3">
                                 <span>
-                                    {{ $weekDay->character() }}
+                                    {{ $weekDay->getCharacter() }}
                                 </span>
 
                                 <span @class([
@@ -238,7 +238,7 @@
                                     'bg-indigo-600 text-white' => $weekDay->isToday(),
                                     'text-indigo-600' => $weekDay->isToday() && !$this->isSelectedDay($weekDay),
                                 ]) wire:click="setDay('{{ $weekDay->date }}')">
-                                    {{ $day->number() }}
+                                    {{ $day->getNumber() }}
                                 </span>
                             </button>
                         @endforeach
@@ -288,8 +288,8 @@
                                             @endif
 
                                             <p class="text-blue-500 group-hover:text-blue-700">
-                                                <time datetime="{{ $event->dateTime() }}">
-                                                    {{ $event->startTimeHuman($formatEventTime) }}
+                                                <time datetime="{{ $event->getDateTime() }}">
+                                                    {{ $event->getStartTimeForHumans($formatEventTime) }}
                                                 </time>
                                             </p>
                                         </span>
@@ -357,7 +357,7 @@
                                         'bg-gray-900' => $this->isSelectedDay($day) && !$day->isToday,
                                         'mx-auto flex h-7 w-7 items-center justify-center rounded-full',
                                     ])>
-                                        {{ $day->number() }}
+                                        {{ $day->getNumber() }}
                                     </time>
                                 </button>
                             @endforeach
@@ -375,7 +375,7 @@
                             @foreach ($week->days as $weekDay)
                                 <button type="button" class="flex flex-col items-center pb-1.5 pt-3">
                                     <span class="text-xs">
-                                        {{ $weekDay->character() }}
+                                        {{ $weekDay->getCharacter() }}
                                     </span>
 
                                     <span @class([
@@ -384,7 +384,7 @@
                                         'bg-indigo-600 text-white' => $weekDay->isToday(),
                                         'text-indigo-600' => $weekDay->isToday() && !$this->isSelectedDay($weekDay),
                                     ]) wire:click="setDay('{{ $weekDay->date }}')">
-                                        {{ $weekDay->number() }}
+                                        {{ $weekDay->getNumber() }}
                                     </span>
                                 </button>
                             @endforeach
@@ -396,7 +396,7 @@
                             @foreach ($week->days as $weekDay)
                                 <div class="flex items-center justify-center py-3">
                                     <span @class(['flex items-baseline' => $weekDay->isToday])>
-                                        {{ $weekDay->shortName() }}
+                                        {{ $weekDay->getShortName() }}
                                         <span @class([
                                             'ml-1.5 flex h-8 w-8 rounded-full bg-indigo-600 text-white' =>
                                                 $weekDay->isToday,
@@ -404,7 +404,7 @@
                                             'items-center justify-center font-semibold cursor-pointer',
                                         ])
                                             wire:click="setDay('{{ $weekDay->date }}')">
-                                            {{ $weekDay->number() }}
+                                            {{ $weekDay->getNumber() }}
                                         </span>
                                     </span>
                                 </div>
@@ -470,8 +470,8 @@
                                                 @endif
 
                                                 <p class="text-blue-500 group-hover:text-blue-700">
-                                                    <time datetime="{{ $event->dateTime() }}">
-                                                        {{ $event->startTimeHuman($formatEventTime) }}
+                                                    <time datetime="{{ $event->getDateTime() }}">
+                                                        {{ $event->getStartTimeForHumans($formatEventTime) }}
                                                     </time>
                                                 </p>
                                             </span>
@@ -513,7 +513,7 @@
                                             'cursor-pointer',
                                         ])
                                             wire:click="setDay('{{ $day->date }}')">
-                                            {{ $day->number() }}
+                                            {{ $day->getNumber() }}
                                         </time>
 
                                         @unless ($this->eventsForDay($day, $events)->isEmpty())
@@ -527,9 +527,9 @@
                                                                 {{ $event->name }}
                                                             </p>
 
-                                                            <time dateTime={{ $event->dateTime() }}
+                                                            <time dateTime={{ $event->getDateTime() }}
                                                                 class="ml-3 hidden flex-none text-gray-500 group-hover:text-indigo-600 xl:block">
-                                                                {{ $event->time($formatEventTime) }}
+                                                                {{ $event->getTime($formatEventTime) }}
                                                             </time>
                                                         </span>
                                                     </li>
@@ -569,7 +569,7 @@
                                             'bg-gray-900' => $this->isSelectedDay($day) && !$day->isToday,
                                             'ml-auto',
                                         ])>
-                                            {{ $day->number() }}
+                                            {{ $day->getNumber() }}
                                         </time>
 
                                         <span class="sr-only">{{ $this->eventsForDay($day, $events)->count() }}
@@ -600,10 +600,10 @@
                                         <p class="font-semibold text-gray-900">
                                             {{ $event->name }}
                                         </p>
-                                        <time dateTime={{ $event->dateTime() }}
+                                        <time dateTime={{ $event->getDateTime() }}
                                             class="mt-2 flex items-center text-gray-700">
                                             <ClockIcon class="mr-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                                            {{ $event->time($formatEventTime) }}
+                                            {{ $event->getTime($formatEventTime) }}
                                         </time>
                                     </div>
                                     <span
@@ -625,7 +625,7 @@
                 @foreach ($year->months as $month)
                     <section class="text-center">
                         <h2 class="text-sm font-semibold text-gray-900" wire:click="setMonth({{ $month->number }})">
-                            {{ $month->name() }}
+                            {{ $month->getName() }}
                         </h2>
 
                         <div class="mt-6 grid grid-cols-7 text-xs leading-6 text-gray-500">
@@ -652,7 +652,7 @@
                                             'bg-indigo-600 font-semibold text-white' => $day->isToday,
                                             'mx-auto flex h-7 w-7 items-center justify-center rounded-full',
                                         ])>
-                                            {{ $day->number() }}
+                                            {{ $day->getNumber() }}
                                         </time>
                                     </button>
                                 @endforeach
