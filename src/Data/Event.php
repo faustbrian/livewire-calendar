@@ -16,6 +16,7 @@ final readonly class Event
         public Carbon $startTime,
         public Carbon $endTime,
         public ?string $priority = null,
+        public array $meta = [],
     ) {
         //
     }
