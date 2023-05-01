@@ -6,9 +6,12 @@ namespace BombenProdukt\LivewireCalendar\Data;
 
 use BombenProdukt\LivewireCalendar\Contracts\EventInterface;
 use Carbon\Carbon;
+use Illuminate\Support\Traits\Macroable;
 
-final readonly class Event implements EventInterface
+final class Event implements EventInterface
 {
+    use Macroable;
+
     public function __construct(
         public string $id,
         public string $name,

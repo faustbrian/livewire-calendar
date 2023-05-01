@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace BombenProdukt\LivewireCalendar\Data;
 
-final readonly class DayLabel
+use Illuminate\Support\Traits\Macroable;
+
+final class DayLabel
 {
+    use Macroable;
+
     public function __construct(
         private string $name,
     ) {

@@ -6,9 +6,12 @@ namespace BombenProdukt\LivewireCalendar\Data;
 
 use BombenProdukt\LivewireCalendar\Contracts\DayInterface;
 use Carbon\Carbon;
+use Illuminate\Support\Traits\Macroable;
 
-final readonly class Day implements DayInterface
+final class Day implements DayInterface
 {
+    use Macroable;
+
     public function __construct(
         public Carbon $date,
         public bool $isCurrentMonth,

@@ -6,9 +6,12 @@ namespace BombenProdukt\LivewireCalendar\Data;
 
 use BombenProdukt\LivewireCalendar\Contracts\YearInterface;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Traits\Macroable;
 
-final readonly class Year implements YearInterface
+final class Year implements YearInterface
 {
+    use Macroable;
+
     /**
      * @param Collection<int, Month> $months
      */

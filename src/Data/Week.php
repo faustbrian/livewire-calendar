@@ -6,9 +6,12 @@ namespace BombenProdukt\LivewireCalendar\Data;
 
 use BombenProdukt\LivewireCalendar\Contracts\WeekInterface;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Traits\Macroable;
 
-final readonly class Week implements WeekInterface
+final class Week implements WeekInterface
 {
+    use Macroable;
+
     /**
      * @param Collection<int, Day> $days
      */
