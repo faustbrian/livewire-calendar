@@ -166,3 +166,32 @@ window.onLivewireCalendarEventDrop = function(event, componentId, dateString, dr
 		.call('onEventDropped', event.dataTransfer.getData('id'), dateString);
 };
 ```
+
+### Troubleshooting
+
+If you are having trouble getting the calendar to render, you should make sure that your `tailwind.config.js` file is configured correctly. You can use the following example as a starting point:
+
+```js
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        './vendor/bombenprodukt/livewire-calendar/**/*.blade.php',
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './vendor/laravel/jetstream/**/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+    ],
+
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+            },
+        },
+    },
+
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+};
+```

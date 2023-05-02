@@ -31,6 +31,11 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
+			message: "#^Call to an undefined method Illuminate\\\\Contracts\\\\View\\\\Factory\\|Illuminate\\\\View\\\\View\\:\\:with\\(\\)\\.$#"
+			count: 1
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
 			message: "#^Cannot access property \\$href on mixed\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
@@ -123,6 +128,11 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$value of function collect expects Illuminate\\\\Contracts\\\\Support\\\\Arrayable\\<\\(int\\|string\\), Carbon\\\\CarbonInterface\\|null\\>\\|iterable\\<\\(int\\|string\\), Carbon\\\\CarbonInterface\\|null\\>\\|null, Carbon\\\\CarbonPeriod given\\.$#"
 			count: 2
+			path: src/Http/Livewire/AbstractCalendar.php
+
+		-
+			message: "#^Parameter \\#1 \\$view of function view expects view\\-string\\|null, mixed given\\.$#"
+			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
