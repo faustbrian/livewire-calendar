@@ -23,4 +23,10 @@ return [
         'year' => 'livewire-calendar::year',
         'event' => 'livewire-calendar::event',
     ],
+    'formats' => [
+        'full' => 'F d, Y',
+        'month_year' => 'F Y',
+        'month' => 'F',
+        'day' => 'l'
+    ],
 ];
