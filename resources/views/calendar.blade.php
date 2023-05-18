@@ -7,19 +7,19 @@
                         class="sm:hidden"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        {{ $day->date->format('F d, Y') }}
+                        {{ $day->date->format(config('livewire-calendar.formats.full')) }}
                     </time>
 
                     <time
                         class="hidden sm:inline"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        {{ $day->date->format('F d, Y') }}
+                        {{ $day->date->format(config('livewire-calendar.formats.full')) }}
                     </time>
                 </h1>
 
                 <p class="mt-1 text-sm text-gray-500">
-                    {{ $selectedDateTime->format('l') }}
+                    {{ $selectedDateTime->format(config('livewire-calendar.formats.day')) }}
                 </p>
             @endif
 
@@ -31,19 +31,19 @@
                         class="sm:hidden"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        Week {{ $weekOfYear }}
+                        @lang('Week') {{ $weekOfYear }}
                     </time>
 
                     <time
                         class="hidden sm:inline"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        Week {{ $weekOfYear }}
+                        @lang('Week') {{ $weekOfYear }}
                     </time>
                 </h1>
 
                 <p class="mt-1 text-sm text-gray-500">
-                    {{ $selectedDateTime->format('F') }}
+                    {{ $selectedDateTime->format(config('livewire-calendar.formats.month')) }}
                 </p>
             @endif
 
@@ -53,19 +53,19 @@
                         class="sm:hidden"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        {{ $selectedDateTime->format('F Y') }}
+                        {{ $selectedDateTime->format(config('livewire-calendar.formats.month_year')) }}
                     </time>
 
                     <time
                         class="hidden sm:inline"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        {{ $selectedDateTime->format('F Y') }}
+                        {{ $selectedDateTime->format(config('livewire-calendar.formats.month_year')) }}
                     </time>
                 </h1>
 
                 <p class="mt-1 text-sm text-gray-500">
-                    {{ $selectedDateTime->format('F') }}
+                    {{ $selectedDateTime->format(config('livewire-calendar.formats.month')) }}
                 </p>
             @endif
 
@@ -75,14 +75,14 @@
                         class="sm:hidden"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        {{ $selectedDateTime->toFormattedDateString() }}
+                        {{ $selectedDateTime->format(config('livewire-calendar.formats.full')) }}
                     </time>
 
                     <time
                         class="hidden sm:inline"
                         datetime="{{ $selectedDateTime->toDateString() }}"
                     >
-                        {{ $selectedDateTime->toFormattedDateString() }}
+                        {{ $selectedDateTime->format(config('livewire-calendar.formats.full')) }}
                     </time>
                 </h1>
             @endif
@@ -100,7 +100,7 @@
                     type="button"
                     wire:click="moveCursor('previous')"
                 >
-                    <span class="sr-only">Previous {{ $selectedView }}</span>
+                    <span class="sr-only">@lang('Previous') {{ $selectedView }}</span>
 
                     <svg
                         class="h-5 w-5"
@@ -129,7 +129,7 @@
                     type="button"
                     wire:click="moveCursor('next')"
                 >
-                    <span class="sr-only">Next {{ $selectedView }}</span>
+                    <span class="sr-only">@lang('Next') {{ $selectedView }}</span>
 
                     <svg
                         class="h-5 w-5"
@@ -157,7 +157,7 @@
                         type="button"
                         @click="isOpen = ! isOpen"
                     >
-                        {{ Str::title($selectedView) }}
+                        {{ \BombenProdukt\LivewireCalendar\Enums\CalendarViews::from($selectedView)->getLabel() }}
 
                         <svg
                             class="-mr-1 h-5 w-5 text-gray-400"
@@ -188,61 +188,21 @@
                             class="py-1"
                             role="none"
                         >
-                            <button
-                                type="button"
-                                role="menuitem"
-                                tabindex="-1"
-                                wire:click="$set('selectedView', 'day')"
-                                @click="isOpen = false"
-                                @class([
-                                    'bg-gray-100 text-gray-900' => $selectedView === 'day',
-                                    'block w-full px-4 py-2 text-sm text-gray-700 text-left',
-                                ])
-                            >
-                                Day View
-                            </button>
-
-                            <button
-                                type="button"
-                                role="menuitem"
-                                tabindex="-1"
-                                wire:click="$set('selectedView', 'week')"
-                                @click="isOpen = false"
-                                @class([
-                                    'bg-gray-100 text-gray-900' => $selectedView === 'week',
-                                    'block w-full px-4 py-2 text-sm text-gray-700 text-left',
-                                ])
-                            >
-                                Week View
-                            </button>
-
-                            <button
-                                type="button"
-                                role="menuitem"
-                                tabindex="-1"
-                                wire:click="$set('selectedView', 'month')"
-                                @click="isOpen = false"
-                                @class([
-                                    'bg-gray-100 text-gray-900' => $selectedView === 'month',
-                                    'block w-full px-4 py-2 text-sm text-gray-700 text-left',
-                                ])
-                            >
-                                Month View
-                            </button>
-
-                            <button
-                                type="button"
-                                role="menuitem"
-                                tabindex="-1"
-                                wire:click="$set('selectedView', 'year')"
-                                @click="isOpen = false"
-                                @class([
-                                    'bg-gray-100 text-gray-900' => $selectedView === 'year',
-                                    'block w-full px-4 py-2 text-sm text-gray-700 text-left',
-                                ])
-                            >
-                                Year View
-                            </button>
+                            @foreach(\BombenProdukt\LivewireCalendar\Enums\CalendarViews::cases() as $view)
+                                <button
+                                    type="button"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    wire:click="$set('selectedView', '{{$view->value}}')"
+                                    @click="isOpen = false"
+                                    @class([
+                                        'bg-gray-100 text-gray-900' => $selectedView === $view->value,
+                                        'block w-full px-4 py-2 text-sm text-gray-700 text-left',
+                                    ])
+                                >
+                                    {{$view->getViewLabel()}}
+                                </button>
+                            @endforeach
                         </div>
                     </div>
                 </div>

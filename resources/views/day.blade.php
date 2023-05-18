@@ -112,7 +112,7 @@
                 </svg>
             </button>
             <div class="flex-auto text-sm font-semibold">
-                {{ $selectedDateTime->format('F Y') }}
+                {{ $selectedDateTime->format(config('livewire-calendar.formats.month_year')) }}
             </div>
             <button
                 class="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
