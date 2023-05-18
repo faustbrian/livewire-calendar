@@ -2,13 +2,16 @@
 
 declare(strict_types=1);
 
-namespace BombenProdukt\LivewireCalendar\Enums;
+namespace BombenProdukt\LivewireCalendar\Enum;
 
-enum CalendarViews: string
+enum CalendarView: string
 {
     case DAY = 'day';
+
     case WEEK = 'week';
+
     case MONTH = 'month';
+
     case YEAR = 'year';
 
     public function getLabel(): string

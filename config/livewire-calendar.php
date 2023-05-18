@@ -27,6 +27,6 @@ return [
         'full' => 'F d, Y',
         'month_year' => 'F Y',
         'month' => 'F',
-        'day' => 'l'
+        'day' => 'l',
     ],
 ];

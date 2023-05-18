@@ -157,7 +157,7 @@
                         type="button"
                         @click="isOpen = ! isOpen"
                     >
-                        {{ \BombenProdukt\LivewireCalendar\Enums\CalendarViews::from($selectedView)->getLabel() }}
+                        {{ \BombenProdukt\LivewireCalendar\Enum\CalendarView::from($selectedView)->getLabel() }}
 
                         <svg
                             class="-mr-1 h-5 w-5 text-gray-400"
@@ -188,19 +188,19 @@
                             class="py-1"
                             role="none"
                         >
-                            @foreach(\BombenProdukt\LivewireCalendar\Enums\CalendarViews::cases() as $view)
+                            @foreach(\BombenProdukt\LivewireCalendar\Enum\CalendarView::cases() as $view)
                                 <button
                                     type="button"
                                     role="menuitem"
                                     tabindex="-1"
-                                    wire:click="$set('selectedView', '{{$view->value}}')"
+                                    wire:click="$set('selectedView', '{{ $view->value }}')"
                                     @click="isOpen = false"
                                     @class([
                                         'bg-gray-100 text-gray-900' => $selectedView === $view->value,
                                         'block w-full px-4 py-2 text-sm text-gray-700 text-left',
                                     ])
                                 >
-                                    {{$view->getViewLabel()}}
+                                    {{ $view->getViewLabel() }}
                                 </button>
                             @endforeach
                         </div>
