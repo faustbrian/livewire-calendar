@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [2.3.0] - 2023-05-18
+### Added
+- configurable date formats and translations ([#3](https://github.com/BombenProdukt/package_slug/issues/3))
+
+
 ## [2.2.1] - 2023-05-02
 ### Fixed
 - mobile switch menu
@@ -46,7 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-04-26
 
-[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/2.2.1...HEAD
+[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/2.3.0...HEAD
+[2.3.0]: https://github.com/BombenProdukt/package_slug/compare/2.2.1...2.3.0
 [2.2.1]: https://github.com/BombenProdukt/package_slug/compare/2.2.0...2.2.1
 [2.2.0]: https://github.com/BombenProdukt/package_slug/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/BombenProdukt/package_slug/compare/2.0.0...2.1.0
