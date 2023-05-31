@@ -2,21 +2,25 @@ style: github
 template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
-  repository_url: https://github.com/BombenProdukt/package_slug
+  repository_url: https://github.com/BombenProdukt/livewire-calendar
 options:
   commits:
     filters:
       Type:
-        - feat
-        - fix
-        - perf
-        - refactor
+        - ADDED
+        - CHANGED
+        - DEPRECATED
+        - REMOVED
+        - FIXED
+        - SECURITY
   commit_groups:
     title_maps:
-      feat: Added
-      fix: Fixed
-      perf: Changed
-      refactor: Changed
+      ADDED: Added
+      CHANGED: Changed
+      DEPRECATED: Deprecated
+      REMOVED: Removed
+      FIXED: Fixed
+      SECURITY: Security
   header:
     pattern: "^(\\w*)\\:\\s(.*)$"
     pattern_maps:
