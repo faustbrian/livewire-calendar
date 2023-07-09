@@ -14,7 +14,7 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/BombenProdukt/livewire-calendar",
+    "homepage": "https://github.com/faustbrian/livewire-calendar",
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",
