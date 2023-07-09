@@ -4,20 +4,6 @@
     </a>
 </p>
 
-<p align="center">
-    <a href="https://github.com/faustbrian/livewire-calendar/actions">
-        <img src="https://badge.sh/github/check-runs/BombenProdukt/livewire-calendar" alt="Checks" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/livewire-calendar">
-        <img src="https://badge.sh/packagist/downloads/BombenProdukt/livewire-calendar" alt="Downloads" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/livewire-calendar">
-        <img src="https://badge.sh/packagist/version/BombenProdukt/livewire-calendar" alt="Version" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/livewire-calendar">
-        <img src="https://badge.sh/packagist/license/BombenProdukt/livewire-calendar" alt="License" />
-    </a>
-</p>
 
 ## About Livewire Calendar
 
