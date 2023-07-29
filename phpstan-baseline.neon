@@ -96,22 +96,22 @@ parameters:
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, \\(int\\|string\\)\\)\\: bool\\)\\|null, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\EventInterface\\)\\: bool given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, int\\|string\\)\\: bool\\)\\|null, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\EventInterface\\)\\: bool given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, int\\|string\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface, Closure\\(Carbon\\\\Carbon\\)\\: BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\DayInterface given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: mixed, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\)\\: mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, int\\|string\\)\\: mixed, Closure\\(BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\)\\: mixed given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:mapWithKeys\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\>, Closure\\(Carbon\\\\Carbon\\)\\: non\\-empty\\-array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:mapWithKeys\\(\\) expects callable\\(mixed, int\\|string\\)\\: array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\>, Closure\\(Carbon\\\\Carbon\\)\\: non\\-empty\\-array\\<int, BombenProdukt\\\\LivewireCalendar\\\\Contracts\\\\MonthInterface\\> given\\.$#"
 			count: 1
 			path: src/Http/Livewire/AbstractCalendar.php
 
