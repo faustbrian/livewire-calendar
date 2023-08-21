@@ -64,7 +64,7 @@
                                         </li>
                                     @endforeach
 
-                                    @if ($events->count() > 2)
+                                    @if ($this->eventsForDay($day, $events)->count() > 2)
                                         <li class="text-gray-500">
                                             + {{ $events->count() - 2 }} more
                                         </li>
