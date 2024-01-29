@@ -18,7 +18,7 @@
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",
-        "livewire/livewire": "^2.12",
+        "livewire/livewire": "^3.4",
         "nesbot/carbon": "^2.66",
         "bombenprodukt/laravel-package-powerpack": "^1.0"
     },
