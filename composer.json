@@ -19,11 +19,11 @@
         "php": "^8.3",
         "basecodeoy/laravel-package-powerpack": "^1.0.0",
         "illuminate/contracts": "^11.0",
-        "livewire/livewire": "^3.5.12",
-        "nesbot/carbon": "^2.72.5"
+        "livewire/livewire": "^3.5.18",
+        "nesbot/carbon": "^2.72.6"
     },
     "require-dev": {
-        "basecodeoy/standards": "^1.0.5"
+        "basecodeoy/standards": "^1.1.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
